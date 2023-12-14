@@ -1,5 +1,6 @@
-import PySimpleGUI as sg
 import subprocess
+
+import PySimpleGUI as sg
 
 
 def main():
@@ -7,9 +8,9 @@ def main():
         [sg.Button("Browse")],
         [sg.Text("", size=(40, 1), key="-OUTPUT-")],
         [sg.Text("Begin", size=(15, 1), font="Helvetica 20")],
-        [sg.InputText(key="-BEGIN-")],
+        [sg.Input(key="-BEGIN-", disabled=True)],
         [sg.Text("End", size=(15, 1), font="Helvetica 20")],
-        [sg.InputText(key="-END-")],
+        [sg.Input(key="-END-", disabled=True)],
         [sg.Button("Cancel")],
     ]
 
@@ -32,6 +33,8 @@ def main():
             if file == "":
                 continue
             window["-OUTPUT-"].update(file)
+            window["-BEGIN-"].update(disabled=False)
+            window["-END-"].update(disabled=False)
             value_input_begin = values["-BEGIN-"]
             value_input_end = values["-END-"]
 

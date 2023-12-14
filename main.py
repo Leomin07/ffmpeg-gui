@@ -67,6 +67,7 @@ def main():
         # if someone moved the slider manually, the jump to that frame
         if int(values["-SLIDER-"]) != cur_frame - 1:
             cur_frame = int(values["-SLIDER-"])
+            print(f"cur_frame {cur_frame}")
             vidFile.set(cv.CAP_PROP_POS_FRAMES, cur_frame)
         slider_elem.update(cur_frame)
         cur_frame += 1
