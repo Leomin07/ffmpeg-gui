@@ -1,3 +1,5 @@
 .mypy_cache/
 tempCodeRunnerFile.py
 tempCodeRunnerFile.sh
+.venv/
+venv/
